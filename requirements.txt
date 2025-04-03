@@ -1,0 +1,3 @@
+# Dependências para testes unitários
+
+# Outras dependências (adicione conforme necessário)
