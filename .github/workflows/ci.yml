@@ -7,7 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -20,11 +19,13 @@ jobs:
   execution:
     runs-on: ubuntu-latest
     steps:
-    needs: build
-     - name: Run tests
-       run: |
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Run tests
+      run: |
         python -m unittest discover tests
 
-     - name: Execute code
-       run: |
+    - name: Execute code
+      run: |
         python src/main.py
